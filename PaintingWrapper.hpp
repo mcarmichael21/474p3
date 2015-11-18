@@ -14,7 +14,7 @@
 #include "Painting.hpp"
 #include <iostream>
 #include <fstream>
-#include <cstdio>
+#include <sstream>
 
 using namespace std;
 

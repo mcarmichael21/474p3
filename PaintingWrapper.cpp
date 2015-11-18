@@ -33,7 +33,11 @@ void PaintingWrapper::unset_p(){
 Painting* PaintingWrapper::operator->() const{
     
     if (p == NULL) {
-        string fileName = to_string(pid)+".txt";
+        
+        stringstream out;
+        out << pid;
+        
+        string fileName = out.str()+".txt";
         ifstream iFile(fileName);
         string id, title, artist;
         
@@ -53,10 +57,15 @@ Painting* PaintingWrapper::operator->() const{
 
 void PaintingWrapper::save_painting(){
     if (p != NULL) {
-        string fileName = to_string(pid)+".txt";
+        
+        stringstream out;
+        out << pid;
+        
+        string fileName = out.str()+".txt";
+
         remove(fileName.c_str());
         ofstream oFile(fileName);
-        string content = to_string(pid)+"\n"+p->get_title()+"\n"+p->get_artistName();
+        string content = out.str()+"\n"+p->get_title()+"\n"+p->get_artistName();
         oFile << content;
         
         oFile.close();
@@ -70,7 +79,11 @@ void PaintingWrapper::display(){
     }else{
         tp = p;
     }
-    cout << to_string(tp->get_id())+"\n";
+    
+    stringstream out;
+    out << tp->get_id();
+    
+    cout << out.str()+"\n";
     cout << tp->get_title()+"\n";
     cout << tp->get_artistName()+"\n";
 }
