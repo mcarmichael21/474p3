@@ -38,7 +38,7 @@ Painting* PaintingWrapper::operator->() const{
         out << pid;
         
         string fileName = out.str()+".txt";
-        ifstream iFile(fileName);
+        ifstream iFile(fileName.c_str());
         string id, title, artist;
         
         /* While there is still a line. */
@@ -64,7 +64,7 @@ void PaintingWrapper::save_painting(){
         string fileName = out.str()+".txt";
 
         remove(fileName.c_str());
-        ofstream oFile(fileName);
+        ofstream oFile(fileName.c_str());
         string content = out.str()+"\n"+p->get_title()+"\n"+p->get_artistName();
         oFile << content;
         
