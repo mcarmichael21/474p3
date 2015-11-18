@@ -48,7 +48,7 @@ void PaintingManager::parse(string input){
             case '3':
             case '4':
             case '5':
-                load(stoi(input));
+                load(atoi(input.c_str()));
                 break;
             case 't':
                 change_title();

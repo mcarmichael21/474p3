@@ -11,6 +11,7 @@
 
 #include <stdio.h>
 #include "LinkedList.hpp"
+#include <cstdlib>
 
 class PaintingManager{
 public:

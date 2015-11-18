@@ -11,7 +11,8 @@
 Painting::Painting(string i, string t, string a){
     title = t;
     artistName = a;
-    id = stoi(i);
+    
+    id = atoi(i.c_str());
 }
 
 int Painting::get_id(){
