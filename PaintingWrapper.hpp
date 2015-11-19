@@ -1,15 +1,7 @@
-//
-//  PaintingWrapper.hpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
-
 #ifndef PaintingWrapper_hpp
 #define PaintingWrapper_hpp
 
-#include <iostream>
+#include <stdio.h>
 #include <string>
 #include "Painting.hpp"
 #include <iostream>
@@ -25,14 +17,16 @@ class PaintingWrapper{
         Painting *operator->() const; // send message to Person object
         Painting& operator*() const; // obtain reference to Person object
     
-        int get_pid();
-        Painting *get_p();
+        int getPaintingID();
+        Painting *getPainting();
     
-        void set_p(int i);
-        
-        void save_painting();
+        void setPainting();
     
-        void display();
+        void removePainting();
+    
+        void savePainting();
+    
+        void print();
     
     private:
         Painting *p;

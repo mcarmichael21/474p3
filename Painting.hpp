@@ -1,11 +1,3 @@
-//
-//  Painting.hpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
-
 #ifndef Painting_hpp
 #define Painting_hpp
 
@@ -19,13 +11,13 @@ class Painting{
     public:
         Painting(string i, string t, string a);
     
-        int get_id();
+        int getID();
     
-        void set_title(string t);
-        string get_title();
+        void setTitle(string t);
+        string getTitle();
     
-        void set_artistName(string a);
-        string get_artistName();
+        void setArtistName(string a);
+        string getArtistName();
     
     private:
         int id;                 // This is a unique (integer) identifier for each painting
