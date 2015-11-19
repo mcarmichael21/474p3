@@ -25,7 +25,7 @@ int main(int argc, const char * argv[]) {
     while (command != "q") {
         cout << "$ ";
         cin >> command;
-        pm->parse(command);
+        pm->parseData(command);
     }
     
 }

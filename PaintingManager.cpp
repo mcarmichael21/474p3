@@ -71,7 +71,7 @@ void PaintingManager::fileToMem(int painting){
         for (i=1; i<painting; i++) {
             n = n->get_next();
         }
-        n->get_pw()->set_p();
+        n->get_pw()->set_p(1);
         
         ids[update] = painting;
         current = update;
