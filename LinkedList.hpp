@@ -1,11 +1,3 @@
-//
-//  LinkedList.hpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
-
 #ifndef LinkedList_hpp
 #define LinkedList_hpp
 
@@ -21,12 +13,12 @@ class LinkedList{
     
         LinkedList();
     
-        void list_all();
+        void printAll();
     
-        Node *get_front();
-        void set_front(Node *n);
+        Node *getHead();
+        void setHead(Node *node);
     
-        void save_all();
+        void writeToFile();
 };
 
 
