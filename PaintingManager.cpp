@@ -37,52 +37,43 @@ LinkedList PaintingManager::get_ll(){
     return ll;
 }
 
-void PaintingManager::parse(string input){
-    if(input.length() == 1){
-        switch (input[0]) {
-            case 'l':
-                ll.list_all();
-                break;
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-                load(atoi(input.c_str()));
-                break;
-            case 't':
-                change_title();
-                break;
-            case 'a':
-                change_artist();
-                break;
-            case 's':
-                ll.save_all();
-                break;
-            default:
-                break;
-        }
+int PaintingManager::parseData(string input){
+    if (input == "1" || input == "2" || input == "3" || input == "4" || input == "5") {
+        // load paintings
+    }else if(input == "l"){
+        // list all paintnings
+    }else if(input == "t"){
+        // change the title
+    }else if(input == "a"){
+        // change the artist
+    }else if(input == "s"){
+        // save all paintings
+    }else if(input == "q"){
+        //quit
+        return 0;
     }
+    return 1;
 }
 
-void PaintingManager::load(int id){
+void PaintingManager::fileToMem(int painting){
     int i;
         if (ids[update] != 0) {
             Node *n = ll.get_front();
             for (i=1; i<ids[update]; i++) {
                 n = n->get_next();
             }
-            n->get_pw()->unset_p();
+            delete n->get_pw()->get_p();
+            n->get_pw()->set_p(0);
             
         }
         Node *n = ll.get_front();
         
-        for (i=1; i<id; i++) {
+        for (i=1; i<painting; i++) {
             n = n->get_next();
         }
         n->get_pw()->set_p();
         
-        ids[update] = id;
+        ids[update] = painting;
         current = update;
         update = (update+1)%2;
 }

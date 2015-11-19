@@ -21,13 +21,13 @@ Painting *PaintingWrapper::get_p(){
     return p;
 }
 
-void PaintingWrapper::set_p(){
-    p = operator->();
-}
-
-void PaintingWrapper::unset_p(){
-    delete p;
-    p = NULL;
+void PaintingWrapper::set_p(int i){
+    if(i){
+        p = operator->();
+    }else{
+        p = NULL;
+    }
+    
 }
 
 Painting* PaintingWrapper::operator->() const{

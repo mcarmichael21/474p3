@@ -9,7 +9,7 @@
 #ifndef PaintingWrapper_hpp
 #define PaintingWrapper_hpp
 
-#include <stdio.h>
+#include <iostream>
 #include <string>
 #include "Painting.hpp"
 #include <iostream>
@@ -28,10 +28,8 @@ class PaintingWrapper{
         int get_pid();
         Painting *get_p();
     
-        void set_p();
-    
-        void unset_p();
-    
+        void set_p(int i);
+        
         void save_painting();
     
         void display();

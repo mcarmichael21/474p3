@@ -17,8 +17,8 @@ class PaintingManager{
 public:
     PaintingManager();
     LinkedList get_ll();
-    void parse(string input);
-    void load(int i);
+    void fileToMem(int i);
+    int parseData(string input);
     void change_title();
     void change_artist();
 private:
