@@ -13,6 +13,10 @@ PaintingWrapper::PaintingWrapper(int i){
     id = i;
 }
 
+Painting& PaintingWrapper::operator*() const{
+    return *painting;
+}
+
 Painting* PaintingWrapper::operator->() const{
     string content[3];
     string fileName;
@@ -38,6 +42,8 @@ Painting* PaintingWrapper::operator->() const{
     }
     
 }
+
+
 
 int PaintingWrapper::getPaintingID(){
     return id;
