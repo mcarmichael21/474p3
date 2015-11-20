@@ -1,13 +1,6 @@
-//
-//  Painting.cpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
-
 #include "Painting.hpp"
 
+//Constructor
 Painting::Painting(string i, string t, string a){
     title = t;
     artistName = a;
@@ -15,22 +8,27 @@ Painting::Painting(string i, string t, string a){
     id = atoi(i.c_str());
 }
 
+//Retrieves ID
 int Painting::getID(){
     return id;
 }
 
+//Retrieves Artist Name
 string Painting::getArtistName(){
     return artistName;
 }
 
+//Retrieve Title
 string Painting::getTitle(){
     return title;
 }
 
+//Sets the title
 void Painting::setTitle(string t){
     title = t;
 }
 
+//Sets Artist Name
 void Painting::setArtistName(string a){
     artistName = a;
 }

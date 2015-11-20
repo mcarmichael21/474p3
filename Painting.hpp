@@ -7,6 +7,7 @@
 
 using namespace std;
 
+//Painting Class
 class Painting{
     public:
         Painting(string i, string t, string a);
@@ -20,10 +21,10 @@ class Painting{
         string getArtistName();
     
     private:
-        int id;                 // This is a unique (integer) identifier for each painting
-        string title;           // This is the title of the painting.
-        string artistName;      // The first name of the artist who painted the painting.
-        char* picture;         // A file containing a picture of the painting in an appropriate format
+        int id;                 
+        string title;          
+        string artistName;      
+        char* picture;      
 };
 
-#endif /* Painting_hpp */
+#endif

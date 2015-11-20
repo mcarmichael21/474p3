@@ -10,12 +10,13 @@
 
 using namespace std;
 
+//Painting Wrapper Class
 class PaintingWrapper{
     public:
         PaintingWrapper(int pid);
     
-        Painting *operator->() const; // send message to Person object
-        Painting& operator*() const; // obtain reference to Person object
+        Painting *operator->() const; 
+        Painting& operator*() const; 
     
         int getPaintingID();
         Painting *getPainting();
@@ -33,4 +34,4 @@ class PaintingWrapper{
         int id;
 };
 
-#endif /* PaintingWrapper_hpp */
+#endif 

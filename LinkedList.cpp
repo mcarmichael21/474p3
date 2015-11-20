@@ -1,13 +1,7 @@
-//
-//  LinkedList.cpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
 
 #include "LinkedList.hpp"
 
+//Writes newly modified paintings to their files
 void LinkedList::writeToFile(){
     Node *n = head;
     while (n != NULL) {
@@ -16,14 +10,17 @@ void LinkedList::writeToFile(){
     }
 }
 
+//Constructor
 LinkedList::LinkedList(){
     head = NULL;
 }
 
+//Get head of the linked list
 Node *LinkedList::getHead(){
     return head;
 }
 
+//Set the head of the linked list
 void LinkedList::setHead(Node *node){
     head = node;
 }

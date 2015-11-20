@@ -6,6 +6,7 @@
 
 using namespace std;
 
+//Node Class
 class Node{
     private:
         Node *next;
@@ -18,4 +19,4 @@ class Node{
         void setPaintingWrapper(PaintingWrapper p);
 };
 
-#endif /* Node_hpp */
+#endif

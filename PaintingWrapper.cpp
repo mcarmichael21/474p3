@@ -1,22 +1,17 @@
-//
-//  PaintingWrapper.cpp
-//  Project3
-//
-//  Created by Matthew Carmichael on 11/15/15.
-//  Copyright © 2015 Redline Studios. All rights reserved.
-//
-
 #include "PaintingWrapper.hpp"
 
+//Constructor
 PaintingWrapper::PaintingWrapper(int i){
     painting = NULL;
     id = i;
 }
 
+//Smart pointer operation
 Painting& PaintingWrapper::operator*() const{
     return *painting;
 }
 
+//Load files into memory
 Painting* PaintingWrapper::operator->() const{
     string content[3];
     string fileName;
@@ -43,16 +38,17 @@ Painting* PaintingWrapper::operator->() const{
     
 }
 
-
-
+//Retrieves painting id
 int PaintingWrapper::getPaintingID(){
     return id;
 }
 
+//Retrieves Painting id
 Painting *PaintingWrapper::getPainting(){
     return painting;
 }
 
+//Sets the current painting
 void PaintingWrapper::setPainting(int i){
     if(i){
         painting = operator->();
@@ -62,6 +58,7 @@ void PaintingWrapper::setPainting(int i){
     
 }
 
+//Saves the painting to its file
 void PaintingWrapper::savePainting(){
     string fileName;
     stringstream ss;
@@ -81,6 +78,8 @@ void PaintingWrapper::savePainting(){
         oFile.close();
     }
 }
+
+//Prints the paintings to screen
 
 void PaintingWrapper::print(){
     Painting *p;

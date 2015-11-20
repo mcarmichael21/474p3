@@ -7,10 +7,11 @@
 using namespace std;
 
 class LinkedList{
+	//Private variable node head
     private:
         Node *head;
     public:
-    
+    	//Functions
         LinkedList();
     
     
@@ -21,4 +22,4 @@ class LinkedList{
 };
 
 
-#endif /* LinkedList_hpp */
+#endif 
