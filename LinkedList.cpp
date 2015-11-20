@@ -8,31 +8,22 @@
 
 #include "LinkedList.hpp"
 
+void LinkedList::writeToFile(){
+    Node *n = head;
+    while (n != NULL) {
+        n->getPaintingWrapper()->savePainting();
+        n = n->getNextNode();
+    }
+}
 
 LinkedList::LinkedList(){
-    front = NULL;
+    head = NULL;
 }
 
-void LinkedList::list_all(){
-    Node *n = front;
-    while (n != NULL) {
-        n->get_pw()->display();
-        n = n->get_next();
-    }
+Node *LinkedList::getHead(){
+    return head;
 }
 
-Node *LinkedList::get_front(){
-    return front;
-}
-
-void LinkedList::set_front(Node *n){
-    front = n;
-}
-
-void LinkedList::save_all(){
-    Node *n = front;
-    while (n != NULL) {
-        n->get_pw()->save_painting();
-        n = n->get_next();
-    }
+void LinkedList::setHead(Node *node){
+    head = node;
 }

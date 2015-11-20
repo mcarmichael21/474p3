@@ -20,12 +20,14 @@ int main(int argc, const char * argv[]) {
     PaintingManager *pm = new PaintingManager();
     //pm->get_ll().list_all();
     
-    string command="";
+    string in="";
+    bool exit = false;
     
-    while (command != "q") {
-        cout << "$ ";
-        cin >> command;
-        pm->parseData(command);
+    cout << "Commands: \n l—List all paintings\n 1 . . . 5—Edit a painting\n t—Change the title of the current painting\n a—Change author of the current painting\n s—Save all paintings\n q—Quits the painting manager\n\n";
+    while (!exit) {
+        cout << "Input: ";
+        cin >> in;
+        exit = pm->parseData(in);
     }
     
 }

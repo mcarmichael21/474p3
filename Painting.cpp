@@ -15,22 +15,22 @@ Painting::Painting(string i, string t, string a){
     id = atoi(i.c_str());
 }
 
-int Painting::get_id(){
+int Painting::getID(){
     return id;
 }
 
-string Painting::get_artistName(){
+string Painting::getArtistName(){
     return artistName;
 }
 
-string Painting::get_title(){
+string Painting::getTitle(){
     return title;
 }
 
-void Painting::set_title(string t){
+void Painting::setTitle(string t){
     title = t;
 }
 
-void Painting::set_artistName(string a){
+void Painting::setArtistName(string a){
     artistName = a;
 }

@@ -9,22 +9,22 @@
 #include "Node.hpp"
 
 Node::Node(PaintingWrapper *p){
-    pw = p;
+    paintingWrapper = p;
     
 }
 
-Node *Node::get_next(){
+Node *Node::getNextNode(){
     return next;
 }
 
-void Node::set_next(Node *n){
+void Node::setNextNode(Node *n){
     next = n;
 }
 
-PaintingWrapper *Node::get_pw(){
-    return pw;
+PaintingWrapper *Node::getPaintingWrapper(){
+    return paintingWrapper;
 }
 
-void Node::set_pw(PaintingWrapper pwrap){
-    pw = &pwrap;
+void Node::setPaintingWrapper(PaintingWrapper p){
+    paintingWrapper = &p;
 }

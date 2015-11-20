@@ -20,7 +20,7 @@ class PaintingWrapper{
         int getPaintingID();
         Painting *getPainting();
     
-        void setPainting();
+        void setPainting(int i);
     
         void removePainting();
     
@@ -29,8 +29,8 @@ class PaintingWrapper{
         void print();
     
     private:
-        Painting *p;
-        int pid;
+        Painting *painting;
+        int id;
 };
 
 #endif /* PaintingWrapper_hpp */

@@ -8,12 +8,11 @@ using namespace std;
 
 class LinkedList{
     private:
-        Node *front;
+        Node *head;
     public:
     
         LinkedList();
     
-        void printAll();
     
         Node *getHead();
         void setHead(Node *node);

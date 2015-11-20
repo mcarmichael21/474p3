@@ -8,82 +8,87 @@
 
 #include "PaintingWrapper.hpp"
 
-PaintingWrapper::PaintingWrapper(int id){
-    p = NULL;
-    pid = id;
-}
-
-int PaintingWrapper::get_pid(){
-    return pid;
-}
-
-Painting *PaintingWrapper::get_p(){
-    return p;
-}
-
-void PaintingWrapper::set_p(int i){
-    if(i){
-        p = operator->();
-    }else{
-        p = NULL;
-    }
-    
+PaintingWrapper::PaintingWrapper(int i){
+    painting = NULL;
+    id = i;
 }
 
 Painting* PaintingWrapper::operator->() const{
+    string content[3];
+    string fileName;
+    stringstream ss;
+    int i;
     
-    if (p == NULL) {
+    if (painting == NULL) {
         
-        stringstream out;
-        out << pid;
-        
-        string fileName = out.str()+".txt";
+        ss << id;
+        fileName = ss.str()+".txt";
         ifstream iFile(fileName.c_str());
-        string id, title, artist;
         
         /* While there is still a line. */
-        getline(iFile, id);
-        getline(iFile, title);
-        getline(iFile, artist);
+        for (i=0; i<3; i++) {
+            getline(iFile, content[i]);
+        }
         
         iFile.close();
         
-        return new Painting(id, title, artist);
+        return new Painting(content[0], content[1], content[2]);
     }else{
-        return p;
+        return painting;
     }
     
 }
 
-void PaintingWrapper::save_painting(){
-    if (p != NULL) {
+int PaintingWrapper::getPaintingID(){
+    return id;
+}
+
+Painting *PaintingWrapper::getPainting(){
+    return painting;
+}
+
+void PaintingWrapper::setPainting(int i){
+    if(i){
+        painting = operator->();
+    }else{
+        painting = NULL;
+    }
+    
+}
+
+void PaintingWrapper::savePainting(){
+    string fileName;
+    stringstream ss;
+    string content;
+    
+    if (painting != NULL) {
         
-        stringstream out;
-        out << pid;
+        ss << id;
         
-        string fileName = out.str()+".txt";
+        fileName = ss.str()+".txt";
 
         remove(fileName.c_str());
         ofstream oFile(fileName.c_str());
-        string content = out.str()+"\n"+p->get_title()+"\n"+p->get_artistName();
+        content = ss.str()+"\n"+painting->getTitle()+"\n"+painting->getArtistName();
         oFile << content;
         
         oFile.close();
     }
 }
 
-void PaintingWrapper::display(){
-    Painting *tp;
-    if (p == NULL) {
-        tp = operator->();
+void PaintingWrapper::print(){
+    Painting *p;
+    stringstream ss;
+    
+    if (painting == NULL) {
+        p = operator->();
     }else{
-        tp = p;
+        p = painting;
     }
     
-    stringstream out;
-    out << tp->get_id();
+    ss << p->getID();
     
-    cout << out.str()+"\n";
-    cout << tp->get_title()+"\n";
-    cout << tp->get_artistName()+"\n";
+    cout << "ID: "+ss.str()+"\n";
+    cout << "Title: "+p->getTitle()+"\n";
+    cout << "Artist: "+p->getArtistName()+"\n";
 }

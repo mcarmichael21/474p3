@@ -9,14 +9,15 @@ class PaintingManager{
 public:
     PaintingManager();
     LinkedList get_ll();
-    void parse(string input);
-    void load(int i);
-    void change_title();
-    void change_artist();
+    bool parseData(string input);
+    void fileToMem(int painting);
+    void changeTitle();
+    void changeArtist();
+    void printAll();
 private:
     LinkedList ll;
     int ids[2];
-    int update;
+    int previous;
     int current;
 };
 
